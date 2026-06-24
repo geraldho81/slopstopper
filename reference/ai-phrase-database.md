@@ -37,6 +37,8 @@ Known in rhetoric as **antithesis** or **negative-positive parallelism**; in AI-
 4. **This isn't X, it's Y.** — *"This isn't a diet, it's a lifestyle."*
 5. **This is not X. This is Y.** (demonstrative, period-split) — *"This is not a dashboard. This is a command center."*
 6. **That's not X. That's Y.** — *"That's not micromanagement. That's mentorship."*
+6a. **This is X. This is not Y.** (reversed / assert-then-negate; the same tic with the halves flipped) — *"This is the future of work. This is not a passing trend."*
+6b. **This is X. This isn't Y. This is Z.** (the alternating drumbeat: assert and negate clauses stacked across consecutive short sentences) — *"This is more than a tool. This isn't hype. This is how teams will work."*
 
 **B. "Not just / not only" intensifier family (most common)**
 

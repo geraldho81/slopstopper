@@ -18,6 +18,10 @@ A standalone Claude Code skill that detects and removes AI slop from any writing
 
 It scans for patterns, rewrites the flagged parts, runs a non-negotiables check (zero em dashes, zero antithesis, no fabricated facts), self-audits, scores the result, and delivers clean text. It detects on density and clustering, not single matches, so real human voice survives.
 
+## SEO-safe
+
+When the input is a published article or web page, the rewrite preserves search signals: target keywords, heading hierarchy, title tag and meta description, URL slug, links and anchor text, image alt text, and structured data. It removes the slop without costing rankings, and flags anything that can't be cleaned without an SEO risk.
+
 ## Install
 
 Copy this folder into your skills directory:

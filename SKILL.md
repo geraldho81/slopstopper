@@ -20,7 +20,7 @@ The user points you at text in one of three ways. Handle each:
 
 - **A URL** ("clean up this article: https://..."): fetch the page with WebFetch, asking it to return the full article body text verbatim. Strip nav, ads, cookie banners, and boilerplate. Work on the article prose.
 - **A file path** (.md, .txt, .docx-extracted, .html): Read it. For HTML, work on the visible text content.
-- **Pasted text** — work on it directly.
+- **Pasted text**: work on it directly.
 
 If the source is unclear or empty, ask which text to clean before doing anything else.
 
@@ -36,6 +36,28 @@ Always show the user the rewritten text. When the input was a file the user want
 4. **No emojis** as decoration, bullets, or section icons.
 5. **Name the actor.** Kill passive voice and subjectless fragments. "It was decided" becomes "Leadership decided."
 6. **Keep the meaning.** Never invent facts, sources, names, or numbers to fill a gap. If the original is vague, leave it vague or flag it; do not fabricate specifics.
+7. **Preserve SEO.** When the input is a published article or web page, the rewrite must not cost it rankings. Follow the SEO preservation rules below.
+
+---
+
+## SEO preservation (for articles and web pages)
+
+The text you are cleaning may be ranking on Google. A sloppy rewrite can tank it. Protect the search value while you remove the slop.
+
+**Keep these intact:**
+
+- **Target keywords.** Identify the main keyword and close variants from the title, H1, URL, and any phrase repeated through the body. Keep them in the rewrite at a natural density. You can move a keyword to read better, but do not delete it or swap it for a synonym that loses the search term.
+- **Headings and structure.** Preserve the H1/H2/H3 hierarchy and the order of sections. Clean the wording inside a heading (sentence case, no slop), but keep the keyword and the heading's meaning. Do not merge or drop sections that target distinct queries.
+- **Title tag and meta description.** If present, rewrite them within length limits (title ~60 chars, meta description ~155 chars) and keep the primary keyword near the front. Never strip them.
+- **URL slug.** Leave it unchanged. Changing a slug breaks the URL unless a redirect is added, which is outside this skill's job. Flag it instead of editing it.
+- **Links and anchor text.** Keep all internal and external links. You may reword anchor text for clarity, but keep it descriptive and keyword-relevant; never reduce it to "click here."
+- **Image alt text.** Clean the wording but keep it descriptive and keyword-aware. Do not blank it.
+- **Structured data, schema, captions, and on-page entities** (names, places, products, dates): preserve every one. These feed search and AI-overview extraction.
+- **Length.** Do not gut word count below what the topic needs to stay competitive. Remove filler, not substance. If trimming slop shortens the piece a lot, keep the informative parts and only cut the padding.
+
+**Still remove the slop:** AI vocabulary, the antithesis tic, throat-clearing, and the rest all go, including inside headings and meta. Cleaner, keyword-relevant copy reads better for users and for search. The rule is to preserve search signals, not to preserve slop.
+
+**When something can't be cleaned without an SEO risk** (for example a keyword that only fits inside an awkward AI phrase), keep the keyword, rewrite around it, and flag the line for the user rather than dropping the term.
 
 ---
 
@@ -49,6 +71,7 @@ Kill all of these shapes (full list with examples in `reference/ai-phrase-databa
 
 - "It's not X, it's Y." / "It's not X. It's Y." / "It's not X — it's Y."
 - "This isn't X, it's Y." / "This is not X. This is Y." / "That's not X. That's Y."
+- Reversed order, assert-then-negate (same tic, halves flipped): "This is X. This is not Y." and the alternating drumbeat "This is X. This isn't Y. This is Z."
 - "It's not just X, it's Y." / "Not just X, but Y." / "Not only X, but also Y."
 - "X isn't just Y, it's Z." / "It's more than X. It's Y."
 - "It's not about X, it's about Y." / "It isn't about X. It's about Y."
@@ -142,10 +165,10 @@ Removing slop is half the job. Sterile, voiceless text reads as AI too. After cl
 
 ## Workflow
 
-1. Get the input (Step 0).
+1. Get the input (Step 0). If it is a published article or web page, note the SEO signals first (target keyword, headings, meta, links).
 2. Scan for the patterns above, Priority 1 first.
-3. Rewrite each flagged section, preserving meaning and matching the original tone.
-4. Run the non-negotiables check: zero em dashes, zero curly quotes, zero emojis, zero antithesis tics, no fabricated facts.
+3. Rewrite each flagged section, preserving meaning, the original tone, and the SEO signals.
+4. Run the non-negotiables check: zero em dashes, zero curly quotes, zero emojis, zero antithesis tics, no fabricated facts, SEO signals intact.
 5. Self-audit. Ask: "What still makes this read as AI?" Answer honestly, then fix what you find.
 6. Score it (below). Below 35, revise again.
 7. Deliver the cleaned text (or edit the file in place if that was the ask), with a short list of the main changes.
